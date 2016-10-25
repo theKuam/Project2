@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BooDict</string>
+    <string name="search_hint">hint</string>
 </resources>
