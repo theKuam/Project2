@@ -20,6 +20,15 @@
         android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/network"
+        android:layout_alignEnd="@+id/network"
+        android:layout_marginTop="51dp"
+        android:id="@+id/loaddata" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/network"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
