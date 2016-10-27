@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "217517851056",
+    "firebase_url": "https://boodictionary-b196a.firebaseio.com",
+    "project_id": "boodictionary-b196a",
+    "storage_bucket": "boodictionary-b196a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217517851056:android:c0fad419101cd890",
+        "android_client_info": {
+          "package_name": "com.example.thengm.boodict"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217517851056-juitlbeqkde4ar1gducq57ollmbvhqa1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm6Amgc0yYqTzebLeFsPwNqCdvI9PZFbg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
