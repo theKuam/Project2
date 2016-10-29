@@ -5,11 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
+//import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.SearchView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -35,12 +36,11 @@ public class Controller1Editted {
         return word.toLowerCase();
     }
 
-
-    public static void querySearch(Menu menu, final DatabaseReference mData, SearchView searchView, final ArrayList<String> list, final ArrayList<Word> wordList, final ArrayAdapter<String> adapter) {
+    // tìm kiếm trong database
+    public static void querySearch(Activity menu, final DatabaseReference mData, SearchView searchView, final ArrayList<String> list, final ArrayList<Word> wordList, final ArrayAdapter<String> adapter) {
         final int[] index = {0};
-        searchView = (SearchView) menu.findItem(R.id.searchBar).getActionView();
+        searchView = (SearchView) menu.findViewById(R.id.searchView);
         searchView.setQueryHint("Tra từ...");
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -60,7 +60,7 @@ public class Controller1Editted {
 
                 else {
                     final String finalNewText = newText;
-                    mData.child("FRANCE-VIET").orderByChild("keyword").startAt(newText).limitToFirst(60).addChildEventListener(new ChildEventListener() {
+                    mData.child("ENG-VIET").orderByChild("keyword").startAt(newText).limitToFirst(60).addChildEventListener(new ChildEventListener() {
                         @Override
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                             if (dataSnapshot.child("keyword").getValue().toString().contains(finalNewText)) {
@@ -117,7 +117,7 @@ public class Controller1Editted {
         }
 
         word = wordList.get(k);
-        bundle.putString("word", word.getKeyword());
+        bundle.putString("word", word.getMean()); // chỉ cần lấy mean để xử lý
         intent.putExtra("MyPackage", bundle);
     }
 }
